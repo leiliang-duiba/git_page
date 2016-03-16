@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>兑吧-积分商城下载中心</title>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta name="keywords" content="积分兑换|积分商城源代码|积分商城案例|兑吧源码|兑吧服务端|兑吧下载|兑吧积分商城平台|兑吧积分商城平台|积分对接开发"/>
+    <meta name="description" content="兑吧积分商城，轻松对接。兑吧提供了服务端的开发包和客户端的集成源码，以方便开发者更高效的接入兑吧的服务！"/>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta name="copyright" content="杭州兑吧网络科技有限公司,All Rights Reserved">
+	<link rel="canonical" href="http://www.duiba.com.cn" />
+	<link rel="shortcut icon" type="image/x-icon" href="http://yun.duiba.com.cn/logo.png" />	
+	<link rel="stylesheet" href="http://yun.duiba.com.cn/developer/css/download.min.css">
+	<script src="http://yun.duiba.com.cn/js/jquery-1.6.4.min.js" type="text/javascript"></script>
+</head>
+<body>
+	
+
+ <div class="home-header">
+	<a class="logo" href="/"></a>
+	<div class="nav">
+		<a href="http://www.duiba.com.cn/">首页</a>
+		<a href="http://localhost/function.html">功能</a>
+		<a href="http://localhost/docs.html">文档</a>
+		<a href="http://localhost/dload.html">下载</a>
+		<div class="active-handler"></div>
+	</div>
+                <div class="user">
+					<a class="register" href="http://dlp.duiba.com.cn/signup">注册</a>
+					<a class="login" href="http://dlp.duiba.com.cn/login">登录</a>
+				</div> 
+	
+</div>
+<script>
+
+$(function(){
+	var times;
+	$('.landing_cont_nei').live('mouseenter',function(){
+	    clearTimeout(times);
+	    $(this).find('em').addClass('icon-up').removeClass('icon-down');
+	    $(this).find('.landing-info').stop().slideDown(200);
+	}).live('mouseleave',function(){
+	    times = setTimeout(function(){
+	        $('.landing_cont_nei').find('.landing-info').stop().slideUp(200);
+	        $('.landing_cont_nei').find('em').addClass('icon-down').removeClass('icon-up');
+	    },400)
+	    times;
+	})
+})
+
+
+</script>
+
+
+<!--[if IE 8 ]>
+<style>
+</style>
+<html class="ie8"   lang="zh-CN">
+<![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9"   lang="zh-CN">
+<![endif]-->
+
+<script>
+$(function(){
+	var curIndex,_default;
+	$('.nav').children('a').each(function(index, element) {
+	    if($(this).hasClass('cur')){
+	    	curIndex=_default=index;
+			slideNav($('.nav').children('a').eq(_default));
+			return;
+		}
+	});
+	$('.nav').children('a').hover(function(){
+		curIndex=$(this).index();
+		slideNav($(this));
+	},function(){
+		curIndex=_default;
+		if(_default!=undefined){
+			slideNav($('.nav').children('a').eq(_default));
+		}
+	});
+	function slideNav(cur){
+		var width=parseInt(cur.width());
+		var left=cur.position().left+35;
+		$('.active-handler').css({'left':left,'width':width,'visibility':'visible'});
+		cur.addClass('cur').siblings('a').removeClass('cur');
+	}
+})
+</script>
+	<div class="main-content">
+		<div class="page-title"><p><strong>客户端集成源码下载</strong></p></div>
+			<div class="bgful">
+				<div class="sdk-download">
+						<div class="ios">
+							<div>
+								<i class="ios-logo"></i>
+								<a href="https://github.com/duiba/duiba-iOS-source/archive/master.zip">IOS源码下载<i></i></a>
+								<div class="cl"></div>
+							</div>
+							<p>下载源码示例后，解压文件，里面包含了一个可以直接运行的demo工程通过修改 CreditViewController中的一行代码，即可实现客户端用户到兑吧积分商城的免登录。 解压文件夹中duiba-source目录下的文件，将所有文件复制到开发者iOS的工程中，参考demo示例，调用源码即可。
+							</p>
+							<div class="cl"></div>
+						</div>
+					<div class="android">
+						<div>
+							<i class="ios-android"></i>
+							<a href="https://github.com/duiba/duiba-android-source/archive/master.zip">Android下载<i></i></a>
+							<div class="cl"></div>
+						</div>
+						<p>下载源码示例后，解压文件，里面包含了一个可以直接运行的demo工程CreditsActivity类复制到自己的工程中 ，自己创建一个Activity继承CreditsActivity，通过覆写相关方法，重画导航条风格。 启动方法参考MainActivity中的代码即可。</p>
+						<div class="cl"></div>
+					</div>
+					<p class="cl"></p>
+				</div>
+				<div class="use-dbsdk">
+					<p class="title">兑吧源码支持使用IOS和安卓平台下开发的移动应用，集成简单便捷。<strong>使用兑吧源码能为你带来:</strong></p>
+					<div class="group">
+						<div>
+							<i>01</i>
+							<div>
+								<h2>交互动画</h2>
+								<p>针对网页跳转会刷掉原页面的问题，兑吧优化了交互，模拟原生应用的跳转交互，加强了对用户的路径暗示。</p>
+							</div>
+						</div>
+						<div>
+							<i>02</i>
+							<div>
+								<h2>页面适配</h2>
+								<p>支持对网页的缩放自适应处理，网页无需按百分比宽度进行布局，方便精确展示设计效果。</p>
+							</div>
+						</div>
+						<p class="cl"></p>
+					</div>
+					<div class="group">
+						<div>
+							<i>03</i>
+							<div>
+								<h2>唤起登录</h2>
+								<p>用户如果在未登录的情况下进入积分商城，可以跟源码配合唤起原生的登录动作。</p>
+							</div>
+						</div>
+						<div>
+							<i>04</i>
+							<div>
+								<h2>分享功能</h2>
+								<p>支持将活动和兑换项分享到社交平台。</p>
+							</div>
+						</div>
+						<p class="cl"></p>
+					</div>
+					<div class="group">
+						<div>
+							<i>05</i>
+							<div>
+								<h2>手势支持</h2>
+								<p>支持了手势滑动返回前一级页面。</p>
+							</div>
+						</div>
+						<div>
+							<i>06</i>
+							<div>
+								<h2>返回路径</h2>
+								<p>模拟原生应用的按层级返回，而不是网页的按浏览历史返回。</p>
+							</div>
+						</div>
+						<p class="cl"></p>
+					</div>
+					<div class="group">
+						<div>
+							<i>07</i>
+							<div>
+								<h2>首页积分刷新</h2>
+								<p>支持不刷新页面获取积分更新，网页按浏览历史返回无法触发改动。</p>
+							</div>
+						</div>
+						<div>
+							<i>08</i>
+							<div>
+								<h2>父级页面的状态保留</h2>
+								<p>返回之后前一级页面依然停留在之前的位置，方便用户继续操作。</p>
+							</div>
+						</div>
+						<p class="cl"></p>
+					</div>
+					<p class="cl"></p>
+				</div>
+			</div>
+			<div class="server">
+				<div class="title"><p>服务器端</p></div>
+				<div class="server-download">
+					<a class="java fl" href="https://github.com/duiba/duiba-java-sdk/archive/master.zip">Java开发包<i></i></a>
+					<a class="php" style="float:right" href="http://localhost/php.html">PHP开发包<i></i></a>
+					<a class="net fl" href="http://localhost/net.html">.Net开发包<i></i></a>
+					
+					<a class="more fr" style='float:right'>More</a>
+					<div class="cl"></div>
+				</div>
+				<div class="block-help"><p>我们为不同的服务器编程语言开发者提供了不同的开发包，以方便开发者更高效的接入我们的服务。开发者只需填充所需信息，我们提供的开发包会助你快速实现服务器端接口开发。具体应用详见<a target="_blank" href="http://docs.duiba.com.cn/tech_doc_book/">文档</a>。</p></div>
+			</div>
+	</div>
+	<footer>
+<div class="footer">
+	<div class="container">
+		<div class='clearfix'>
+			<div class="contect">
+				<div>
+					<h2>开发者接入</h2>
+					<p><i class="qq"></i>164932986</p>
+					<p><i class="phone"></i>13732228459</p>
+				</div>
+				<div>
+					<h2>开发者支持</h2>
+					<p><i class="qq"></i>2851653866</p>
+					<p><i class="phone"></i>0571-28258687</p>
+				</div>
+				<div>
+					<h2>广告主合作</h2>
+					<p><i class="qq"></i>2851653867</p>
+					<p><i class="email"></i>leah@duiba.com.cn</p>
+				</div>
+				<div class="qrcode"></div>
+			</div>
+			<div class="cl"></div>
+		</div>
+		<div class="smartNav">
+			<div>
+				<a href="http://localhost/function.html">产品中心</a>
+				<a href="http://localhost/docs.html">技术文档</a>
+				<a href="http://localhost/dload.html">下载中心</a>
+				<a href="http://localhost/joinUs.html">加入我们</a>
+				<a href="http://localhost/about.html">关于我们</a>
+				<a href="http://localhost/link.html">友情链接</a>
+				<a href="http://localhost/agreement.html">服务协议</a>
+				<p>浙ICP备14017299号-2</p>
+			</div>
+		</div>
+	</div>
+</div>
+</footer>  
+	
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?33431f14183f0cdaeb3579f0f15e10e0";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+	
+	</body>
+</html>

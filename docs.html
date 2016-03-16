@@ -1,0 +1,226 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>兑吧-积分商城对接文档中心</title>
+    <meta charset="UTF-8">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta name="keywords" content="积分商城说明文档|积分兑换接口文档|兑吧文档|兑吧积分系统文档|兑吧积分商城平台|兑吧积分商城平台|积分对接文档"/>
+    <meta name="description" content="兑吧&middot;积分商城服务平台，提供完善的接入文档、DEMO,只需一人日轻松对接。系统对接文档，详细的介绍了对吧积分系统的原理及对接步骤，指导开发者快速完成对接！"/>
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta name="copyright" content="杭州兑吧网络科技有限公司,All Rights Reserved">
+	<link rel="canonical" href="http://www.duiba.com.cn" />
+    <link rel="shortcut icon" type="image/x-icon" href="http://yun.duiba.com.cn/logo.png" />
+    <link rel="stylesheet" href="http://yun.duiba.com.cn/developer/css/download.min.css">
+    <link rel="stylesheet" type="text/css" href="http://yun.duiba.com.cn/developer/css/home-common.min.css">
+    <script src="http://yun.duiba.com.cn/js/jquery-1.6.4.min.js" type="text/javascript"></script>
+</head>
+<style type="text/css">
+    body{
+        background:#f5f8fb;
+    }
+</style>
+<body>
+    
+
+ <div class="home-header">
+	<a class="logo" href="/"></a>
+	<div class="nav">
+		<a href="http://www.duiba.com.cn/">首页</a>
+		<a href="http://localhost/function.html">功能</a>
+		<a href="http://localhost/docs.html">文档</a>
+		<a href="http://localhost/dload.html">下载</a>
+		<div class="active-handler"></div>
+	</div>
+                <div class="user">
+					<a class="register" href="http://dlp.duiba.com.cn/signup">注册</a>
+					<a class="login" href="http://dlp.duiba.com.cn/login">登录</a>
+				</div> 
+	
+</div>
+<script>
+
+$(function(){
+	var times;
+	$('.landing_cont_nei').live('mouseenter',function(){
+	    clearTimeout(times);
+	    $(this).find('em').addClass('icon-up').removeClass('icon-down');
+	    $(this).find('.landing-info').stop().slideDown(200);
+	}).live('mouseleave',function(){
+	    times = setTimeout(function(){
+	        $('.landing_cont_nei').find('.landing-info').stop().slideUp(200);
+	        $('.landing_cont_nei').find('em').addClass('icon-down').removeClass('icon-up');
+	    },400)
+	    times;
+	})
+})
+
+
+</script>
+
+
+<!--[if IE 8 ]>
+<style>
+</style>
+<html class="ie8"   lang="zh-CN">
+<![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9"   lang="zh-CN">
+<![endif]-->
+
+<script>
+$(function(){
+	var curIndex,_default;
+	$('.nav').children('a').each(function(index, element) {
+	    if($(this).hasClass('cur')){
+	    	curIndex=_default=index;
+			slideNav($('.nav').children('a').eq(_default));
+			return;
+		}
+	});
+	$('.nav').children('a').hover(function(){
+		curIndex=$(this).index();
+		slideNav($(this));
+	},function(){
+		curIndex=_default;
+		if(_default!=undefined){
+			slideNav($('.nav').children('a').eq(_default));
+		}
+	});
+	function slideNav(cur){
+		var width=parseInt(cur.width());
+		var left=cur.position().left+35;
+		$('.active-handler').css({'left':left,'width':width,'visibility':'visible'});
+		cur.addClass('cur').siblings('a').removeClass('cur');
+	}
+})
+</script>
+    <div class="main-content">
+        <div class="page-title"><p><strong>文档中心</strong></p></div>
+        <div class="main-cont-auto">
+            <p class="document-title">简单几步，让你迅速搭建你的积分商城。</p>
+            <div class="document-list clearfix">
+                <div class="document-list-left">
+                    <div class="radius-line"></div>
+                    <div class="document-radius background-one">01</div>
+                </div>
+                <div class="document-cont-right">
+                    <div class="arrow-right"></div>
+                    <div class="document-right-title app">注册后台账号，创建应用</div>
+                    <div class="app-info">
+                        <p>在兑吧创建一个账号</p>
+                        <a target="_blank" href="http://dlp.duiba.com.cn/signup">注册账号</a>
+                        <p>创建一个属于你的应用</p>
+                    </div>
+                </div>
+                <div class="cl"></div>
+            </div>
+            <div class="document-list clearfix">
+                <div class="document-list-left">
+                    <div class="radius-line"></div>
+                    <div class="document-radius background-two">02</div>
+                </div>
+                <div class="document-cont-right">
+                    <div class="arrow-right"></div>
+                    <div class="document-right-title server">服务器接口开发</div>
+                    <div class="app-info">
+                        <p>进行服务器端接口的开发</p>
+                        <a target="_blank" href="http://docs.duiba.com.cn/tech_doc_book/server/general_autologin_url.html">免登陆url     </a>
+                        <a target="_blank" href="http://docs.duiba.com.cn/tech_doc_book/server/consume_credits_api.html">用户积分扣除接口   </a>
+                        <a target="_blank" href="http://docs.duiba.com.cn/tech_doc_book/server/notify_api.html"> 兑换结果消息通知接口</a>
+                    </div>
+                </div>
+                <div class="cl"></div>
+            </div>
+            <div class="document-list clearfix">
+                <div class="document-list-left">
+                    <div class="radius-line"></div>
+                    <div class="document-radius background-three">03</div>
+                </div>
+                <div class="document-cont-right">
+                    <div class="arrow-right"></div>
+                    <div class="document-right-title client">客户端集成</div>
+                    <div class="app-info">
+                        <p>积分商城用户界面是h5网页，开发者需要将其集成到App中即可，</p>
+                        <p>使用兑吧提供的源码可以达到最佳体验</p>
+                        <a target="_blank" href="/dload">客户端集成</a>
+                    </div>
+                </div>
+                <div class="cl"></div>
+            </div>
+            <div class="document-list clearfix">
+                <div class="document-list-left">
+                    <div class="document-radius background-four">04</div>
+                </div>
+                <div class="document-cont-right">
+                    <div class="arrow-right"></div>
+                    <div class="document-right-title mall">商城配置</div>
+                    <div class="app-info">
+                        <p>配置你的商城页面，在客户端开始一次兑换吧</p>
+                        <a target="_blank" href="http://docs.duiba.com.cn/user_guide_book">后台使用</a>
+                    </div>
+                </div>
+                <div class="cl"></div>
+            </div>
+            <div class="document-cont-manual clearfix">
+                <a target="_blank" href='http://docs.duiba.com.cn/tech_doc_book/' class="technology-document"><label></label>技术对接文档</a>
+                <a target="_blank" href='http://duiba.oss-cn-hangzhou.aliyuncs.com/support_docs/%E5%85%91%E5%90%A7%E5%90%8E%E5%8F%B0%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E12.1.pdf' class="background-manual"><label></label>后台使用手册</a>
+                <div class="cl"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+<div class="footer">
+	<div class="container">
+		<div class='clearfix'>
+			<div class="contect">
+				<div>
+					<h2>开发者接入</h2>
+					<p><i class="qq"></i>164932986</p>
+					<p><i class="phone"></i>13732228459</p>
+				</div>
+				<div>
+					<h2>开发者支持</h2>
+					<p><i class="qq"></i>2851653866</p>
+					<p><i class="phone"></i>0571-28258687</p>
+				</div>
+				<div>
+					<h2>广告主合作</h2>
+					<p><i class="qq"></i>2851653867</p>
+					<p><i class="email"></i>leah@duiba.com.cn</p>
+				</div>
+				<div class="qrcode"></div>
+			</div>
+			<div class="cl"></div>
+		</div>
+		<div class="smartNav">
+			<div>
+				<a href="http://localhost/function.html">产品中心</a>
+				<a href="http://localhost/docs.html">技术文档</a>
+				<a href="http://localhost/dload.html">下载中心</a>
+				<a href="http://localhost/joinUs.html">加入我们</a>
+				<a href="http://localhost/about.html">关于我们</a>
+				<a href="http://localhost/link.html">友情链接</a>
+				<a href="http://localhost/agreement.html">服务协议</a>
+				<p>浙ICP备14017299号-2</p>
+			</div>
+		</div>
+	</div>
+</div>
+</footer>  
+    
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?33431f14183f0cdaeb3579f0f15e10e0";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+    
+    
+    </body>
+</html>
